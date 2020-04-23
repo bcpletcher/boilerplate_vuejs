@@ -1,0 +1,4 @@
+/*    						/index.html   					200
+
+/sampleRoute				/sampleRoute 					301
+/sampleRoute/childRoute 	/sampleRoute/childRoute			301
