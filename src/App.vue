@@ -1,20 +1,20 @@
 <template>
 	<div id="app">
-		<div class="navigation" v-if="path !== '/resume'">
-			<navigation/>
-		</div>
-		<transition mode="out-in">
-			<router-view class="viewer"/>
-		</transition>
+		<router-view class="viewer"/>
+		<a class="footer" href="https://www.pletcher.dev" target="_blank">
+			<div>
+				<img src="../static/img/portfolio.png"/>
+				<p>Visit Portfolio</p>
+			</div>
+		</a>
 	</div>
 </template>
+
 <script>
 	import $ from 'jquery';
-	import navigation from "./components/navigation";
 	export default {
 		name: 'App',
 		components: {
-			navigation,
 		},
 		data () {
 			return {
@@ -49,13 +49,33 @@
 		}
 	};
 </script>
-<style lang="less">
 
-	/*------------- ANIMATION -------------*/
-	.fade-enter-active, .fade-leave-active {
-		transition: opacity .5s;
+<style lang="less">
+	#app {
+		height: 100%;
+		width: 100%;
+		position: relative;
 	}
-	.fade-enter, .fade-leave-to {
-		opacity: 0;
+	.footer {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		right: 0;
+		div {
+			width: 130px;
+			margin: 0 auto;
+		}
+		img, p {
+			display: inline-block;
+		}
+		p {
+			margin: 0 0 0 10px;
+			line-height: 20px;
+			text-align: right;
+		}
+		img {
+			float: left;
+			height: 20px;
+		}
 	}
 </style>

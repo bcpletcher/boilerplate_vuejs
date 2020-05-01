@@ -12,5 +12,10 @@ export default new Router({
 			name: 'Home',
 			component: Home,
 		},
+		{
+			path: '*',
+			component: Home,
+			redirect: '/'
+		}
 	]
 });
